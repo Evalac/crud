@@ -1,1 +1,1 @@
-console.log(`hi`);
+import './js/r-get';
