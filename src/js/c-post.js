@@ -15,6 +15,10 @@ const options = {
   body: JSON.stringify(newBook),
 };
 
-fetch(`http://localhost:3000/books`, options)
-  .then(responce => responce.json())
-  .then(console.log);
+function fetchPostNewBook() {
+  fetch(`http://localhost:3000/books`, options)
+    .then(responce => responce.json())
+    .then(console.log);
+}
+
+fetchPostNewBook();
