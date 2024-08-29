@@ -5,7 +5,8 @@
   "homepage": "https://Evalac.github.io/crud",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /crud/"
+    "build": "parcel build src/*.html --public-url /crud/",
+    "server": "npx json-server db.jso"
   },
   "repository": {
     "type": "git",
