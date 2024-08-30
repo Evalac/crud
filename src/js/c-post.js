@@ -18,19 +18,19 @@ function fetchPostNewBook(newBook) {
   return fetch(`${BASE_URL}/books`, options).then(responce => responce.json());
 }
 
-fetchPostNewBook({
-  title: 'Test book for TYPEsCRIPT',
-  author: 'Me',
-  genres: ['TYPEsCRIPT'],
-  rating: 9,
-}).then(book => renderBook(book));
+// fetchPostNewBook({
+//   title: 'Test book for TYPEsCRIPT',
+//   author: 'Me',
+//   genres: ['TYPEsCRIPT'],
+//   rating: 9,
+// }).then(book => renderBook(book));
 
-fetchPostNewBook({
-  title: 'Test book for Angular',
-  author: 'Me',
-  genres: ['Angular'],
-  rating: 9.2,
-}).then(book => renderBook(book));
+// fetchPostNewBook({
+//   title: 'Test book for Angular',
+//   author: 'Me',
+//   genres: ['Angular'],
+//   rating: 9.2,
+// }).then(book => renderBook(book));
 
 function renderBook(book) {
   console.log(book);
