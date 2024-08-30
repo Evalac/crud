@@ -101,44 +101,58 @@
       "rating": 4.4
     },
     {
-      "id": "b673",
-      "title": "Test",
+      "id": "891f",
+      "title": "Test book for HTML",
       "author": "Me",
       "genres": [
-        "Classic",
-        "Romance"
+        "HTML"
       ],
-      "rating": 4.9
+      "rating": 9
     },
     {
-      "id": "84f0",
-      "title": "Test",
+      "id": "320d",
+      "title": "Test book for CSS",
       "author": "Me",
       "genres": [
-        "Classic",
-        "Romance"
+        "CSS"
       ],
-      "rating": 4.9
+      "rating": 9.2
     },
     {
-      "id": "8651",
-      "title": "Test",
+      "id": "6fb7",
+      "title": "Test book for JS",
       "author": "Me",
       "genres": [
-        "Classic",
-        "Romance"
+        "JS"
       ],
-      "rating": 4.9
+      "rating": 9
     },
     {
-      "id": "8266",
-      "title": "Test1",
-      "author": "Me2",
+      "id": "b528",
+      "title": "Test book for React",
+      "author": "Me",
       "genres": [
-        "Classic",
-        "Romance"
+        "React"
       ],
-      "rating": 4.9
+      "rating": 9.2
+    },
+    {
+      "id": "920c",
+      "title": "Test book for TYPEsCRIPT",
+      "author": "Me",
+      "genres": [
+        "TYPEsCRIPT"
+      ],
+      "rating": 9
+    },
+    {
+      "id": "b5f0",
+      "title": "Test book for Angular",
+      "author": "Me",
+      "genres": [
+        "Angular"
+      ],
+      "rating": 9.2
     }
   ]
 }

@@ -15,9 +15,23 @@ function fetchPostNewBook(newBook) {
     },
     body: JSON.stringify(newBook),
   };
-  fetch(`http://localhost:3000/books`, options)
-    .then(responce => responce.json())
-    .then(console.log);
+  return fetch(`${BASE_URL}/books`, options).then(responce => responce.json());
 }
 
-fetchPostNewBook(newBook);
+fetchPostNewBook({
+  title: 'Test book for TYPEsCRIPT',
+  author: 'Me',
+  genres: ['TYPEsCRIPT'],
+  rating: 9,
+}).then(book => renderBook(book));
+
+fetchPostNewBook({
+  title: 'Test book for Angular',
+  author: 'Me',
+  genres: ['Angular'],
+  rating: 9.2,
+}).then(book => renderBook(book));
+
+function renderBook(book) {
+  console.log(book);
+}
