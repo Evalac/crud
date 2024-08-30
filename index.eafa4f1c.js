@@ -1,2 +1,0 @@
-function t(t){const o={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)};return fetch("http://localhost:3000/books",o).then((t=>t.json()))}function o(t){console.log(t)}t({title:"Test book for TYPEsCRIPT",author:"Me",genres:["TYPEsCRIPT"],rating:9}).then((t=>o(t))),t({title:"Test book for Angular",author:"Me",genres:["Angular"],rating:9.2}).then((t=>o(t)));
-//# sourceMappingURL=index.eafa4f1c.js.map
