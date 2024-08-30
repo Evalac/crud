@@ -1,0 +1,2 @@
+!function(){function n(n){var t={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(n)};return fetch("".concat("http://localhost:3000","/books"),t).then((function(n){return n.json()}))}function t(n){console.log(n)}n({title:"Test book for TYPEsCRIPT",author:"Me",genres:["TYPEsCRIPT"],rating:9}).then((function(n){return t(n)})),n({title:"Test book for Angular",author:"Me",genres:["Angular"],rating:9.2}).then((function(n){return t(n)}))}();
+//# sourceMappingURL=index.5090c3f8.js.map
