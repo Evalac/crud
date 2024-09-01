@@ -46,7 +46,8 @@
       "author": "J.D. Salinger",
       "genres": [
         "Classic",
-        "Young Adult"
+        "Young Adult",
+        "Update-test"
       ],
       "rating": 4.2
     },
@@ -129,7 +130,7 @@
     },
     {
       "id": "b528",
-      "title": "Test book for React",
+      "title": "BIG Test book for React",
       "author": "Me",
       "genres": [
         "React"
@@ -138,10 +139,10 @@
     },
     {
       "id": "920c",
-      "title": "Test book for TYPEsCRIPT",
+      "title": "Test book for NODE JS",
       "author": "Me",
       "genres": [
-        "TYPEsCRIPT"
+        "NODE JS"
       ],
       "rating": 9
     },
