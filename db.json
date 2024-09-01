@@ -92,16 +92,6 @@
       "rating": 4.1
     },
     {
-      "id": "10",
-      "title": "War and Peace",
-      "author": "Leo Tolstoy",
-      "genres": [
-        "Classic",
-        "Historical Fiction"
-      ],
-      "rating": 4.4
-    },
-    {
       "id": "891f",
       "title": "Test book for HTML",
       "author": "Me",
