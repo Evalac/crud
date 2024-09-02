@@ -44,4 +44,16 @@ function getFruit(name) {
   return Promise.resolve(fruiyts[name]);
 }
 
-getFruit('apple').then(console.log);
+function makeSmoothie() {
+  getFruit('apple').then(apple => {
+    console.log(apple);
+    getFruit('kiwi').then(kiwi => console.log(kiwi));
+    getFruit('strawberry').then(strawberry => console.log(strawberry));
+  });
+}
+
+makeSmoothie();
+
+async function makeitSoothie() {
+  const apple = await getFruit('apple');
+}
