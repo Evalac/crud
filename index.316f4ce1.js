@@ -1,2 +1,0 @@
-const t=document.querySelector(".js-container");!async function(n){try{const a=(await async function(t){const n=await fetch(`http://localhost:3000/books/${t}`);return await n.json()}(n)).map((({title:t,author:n,rating:a})=>`<h1 class="title">${t}</h1>\n        <p class="parag">${n}</p>\n        <p class="parag">${a}</p>\n      `)).join("");t.innerHTML=a}catch(n){t.innerHTML="ERROR"}}(2);
-//# sourceMappingURL=index.316f4ce1.js.map
