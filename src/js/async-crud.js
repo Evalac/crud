@@ -31,6 +31,6 @@ async function renederUiBook(data) {
 
 renederUiBook();
 
-setTimeout(() => {
-  console.log(1212);
-}, 5000);
+// setTimeout(() => {
+//   console.log(1212);
+// }, 5000);
