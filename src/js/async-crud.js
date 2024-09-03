@@ -46,7 +46,7 @@ async function fetchBooks(params) {
 
 async function renderMarkup(bookID) {
   try {
-    const book = await fetchBookById(bookID);
+    const book = await fetchBooks();
     const markup = book
       .map(
         ({ title, author, rating }) => `<h1 class="title">${title}</h1>
@@ -61,4 +61,4 @@ async function renderMarkup(bookID) {
   }
 }
 
-renderMarkup(2);
+renderMarkup();
