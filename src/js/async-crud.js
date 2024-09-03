@@ -1,4 +1,6 @@
-const BASE_URL = `http://locsalhost:3000`;
+const BASE_URL = `http://localhost:3000`;
+
+const divEl = document.querySelector('.js-container');
 
 const newBook = {
   title: 'DODO',
@@ -29,8 +31,34 @@ async function renederUiBook(data) {
   }
 }
 
-renederUiBook();
+// renederUiBook();
+async function fetchBookById(bookId) {
+  const responce = await fetch(`${BASE_URL}/books/${bookId}`);
+  const bookByID = await responce.json();
+  return bookByID;
+}
 
-// setTimeout(() => {
-//   console.log(1212);
-// }, 5000);
+async function fetchBooks(params) {
+  const responce = await fetch(`${BASE_URL}/books`);
+  const books = await responce.json();
+  return books;
+}
+
+async function renderMarkup(bookID) {
+  try {
+    const book = await fetchBookById(bookID);
+    const markup = book
+      .map(
+        ({ title, author, rating }) => `<h1 class="title">${title}</h1>
+        <p class="parag">${author}</p>
+        <p class="parag">${rating}</p>
+      `
+      )
+      .join('');
+    divEl.innerHTML = markup;
+  } catch (error) {
+    divEl.innerHTML = `ERROR`;
+  }
+}
+
+renderMarkup(2);
