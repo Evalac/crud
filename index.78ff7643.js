@@ -1,2 +1,0 @@
-const o={title:"DODO",author:"Me2",genres:["Classic","Romance"],rating:4.9};!async function(t){try{const t=await async function(o){const t={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)},n=await fetch("http://locsalhost:3000/books",t);return await n.json()}(o);console.log(t)}catch(o){console.log(o)}}(),setTimeout((()=>{console.log(1212)}),5e3);
-//# sourceMappingURL=index.78ff7643.js.map
