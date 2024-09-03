@@ -4,145 +4,105 @@
       "id": "1",
       "title": "To Kill a Mockingbird",
       "author": "Harper Lee",
-      "genres": [
-        "Classic",
-        "Fiction"
-      ],
+      "genres": ["Classic", "Fiction"],
       "rating": 4.8
     },
     {
       "id": "2",
       "title": "1984",
       "author": "George Orwell",
-      "genres": [
-        "Dystopian",
-        "Science Fiction"
-      ],
+      "genres": ["Dystopian", "Science Fiction"],
       "rating": 4.7
     },
     {
       "id": "3",
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
-      "genres": [
-        "Classic",
-        "Romance"
-      ],
+      "genres": ["Classic", "Romance"],
       "rating": 4.5
     },
     {
       "id": "4",
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
-      "genres": [
-        "Classic",
-        "Romance"
-      ],
+      "genres": ["Classic", "Romance"],
       "rating": 4.6
     },
     {
       "id": "5",
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
-      "genres": [
-        "Classic",
-        "Young Adult",
-        "Update-test"
-      ],
+      "genres": ["Classic", "Young Adult", "Update-test"],
       "rating": 4.2
     },
     {
       "id": "6",
       "title": "Brave New World",
       "author": "Aldous Huxley",
-      "genres": [
-        "Dystopian",
-        "Science Fiction"
-      ],
+      "genres": ["Dystopian", "Science Fiction"],
       "rating": 4.3
     },
     {
       "id": "7",
       "title": "The Lord of the Rings",
       "author": "J.R.R. Tolkien",
-      "genres": [
-        "Fantasy",
-        "Adventure"
-      ],
+      "genres": ["Fantasy", "Adventure"],
       "rating": 4.9
     },
     {
       "id": "8",
       "title": "The Hobbit",
       "author": "J.R.R. Tolkien",
-      "genres": [
-        "Fantasy",
-        "Adventure"
-      ],
+      "genres": ["Fantasy", "Adventure"],
       "rating": 4.8
     },
     {
       "id": "9",
       "title": "Moby-Dick",
       "author": "Herman Melville",
-      "genres": [
-        "Classic",
-        "Adventure"
-      ],
+      "genres": ["Classic", "Adventure"],
       "rating": 4.1
     },
     {
       "id": "891f",
       "title": "Test book for HTML",
       "author": "Me",
-      "genres": [
-        "HTML"
-      ],
+      "genres": ["HTML"],
       "rating": 9
     },
     {
       "id": "320d",
       "title": "Test book for CSS",
       "author": "Me",
-      "genres": [
-        "CSS"
-      ],
+      "genres": ["CSS"],
       "rating": 9.2
     },
     {
       "id": "6fb7",
       "title": "Test book for JS",
       "author": "Me",
-      "genres": [
-        "JS"
-      ],
+      "genres": ["JS"],
       "rating": 9
     },
     {
       "id": "b528",
       "title": "BIG Test book for React",
       "author": "Me",
-      "genres": [
-        "React"
-      ],
+      "genres": ["React"],
       "rating": 9.2
     },
     {
       "id": "920c",
       "title": "Test book for NODE JS",
       "author": "Me",
-      "genres": [
-        "NODE JS"
-      ],
+      "genres": ["NODE JS"],
       "rating": 9
     },
     {
       "id": "b5f0",
       "title": "Test book for Angular",
       "author": "Me",
-      "genres": [
-        "Angular"
-      ],
+      "genres": ["Angular"],
       "rating": 9.2
     }
   ]

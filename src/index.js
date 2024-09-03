@@ -2,4 +2,5 @@
 // import './js/c-post';
 // import './js/u-patch';
 // import './js/d-delete';
-import './js/async';
+// import './js/async';
+import './js/async-crud';
