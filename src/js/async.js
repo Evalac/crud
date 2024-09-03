@@ -34,26 +34,40 @@
 // }
 
 ///////////////////////////////////
+
 function getFruit(name) {
   const fruiyts = {
-    strawberry: 'полинця',
-    kiwi: 'kiwi',
-    apple: 'apl',
+    strawberry: '🍓',
+    kiwi: '🥝',
+    apple: '🍏',
   };
 
-  return Promise.resolve(fruiyts[name]);
+  return new Promise((resolve, reject) =>
+    setTimeout(() => {
+      resolve(fruiyts[name]), reject(`reject`);
+    }, 500)
+  );
 }
 
 function makeSmoothie() {
   getFruit('apple').then(apple => {
-    console.log(apple);
-    getFruit('kiwi').then(kiwi => console.log(kiwi));
     getFruit('strawberry').then(strawberry => console.log(strawberry));
   });
 }
-
-makeSmoothie();
+// makeSmoothie();
 
 async function makeitSoothie() {
-  const apple = await getFruit('apple');
+  try {
+    const kiwi = getFruit('kiwi');
+    const strawberry = getFruit('strawberry');
+    const apple = getFruit('apple'); // якщо ставити await перед кожним викликом функції то вони будуть виконуватись послідовно
+
+    const fruits = await Promise.all([apple, kiwi, strawberry]);
+
+    return fruits;
+  } catch (error) {
+    console.log(`Помилка` + error);
+  }
 }
+
+makeitSoothie().then(data => console.log(data));
