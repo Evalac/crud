@@ -3,4 +3,5 @@
 // import './js/u-patch';
 // import './js/d-delete';
 // import './js/async';
-import './js/async-crud';
+// import './js/async-crud';
+import './js/async-foo-practice';

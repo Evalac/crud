@@ -46,12 +46,13 @@ async function fetchBooks(params) {
 
 async function renderMarkup(bookID) {
   try {
-    const book = await fetchBooks();
-    const markup = book
+    const book = await fetchBookById(4);
+    const markup = [book]
       .map(
-        ({ title, author, rating }) => `<h1 class="title">${title}</h1>
+        ({ title, author, rating, id }) => `<h1 class="title">${title}</h1>
         <p class="parag">${author}</p>
         <p class="parag">${rating}</p>
+        <p class="parag">ID: ${id}</p>
       `
       )
       .join('');
