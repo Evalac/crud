@@ -1,0 +1,2 @@
+const e={searchForm:document.querySelector(".js-search"),addBtn:document.querySelector(".js-add"),listEl:document.querySelector(".js-list"),formContainer:document.querySelector(".form-container")};e.addBtn.addEventListener("click",(function(t){e.formContainer.insertAdjacentHTML("beforeend",'<input type="text" name="country">')})),e.searchForm.addEventListener("submit",(function(e){e.preventDefault();const t=new FormData(e.currentTarget);console.log(t.getAll("country"))}));
+//# sourceMappingURL=index.f20f546d.js.map
