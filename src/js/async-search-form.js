@@ -1,4 +1,5 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name';
+
 const refs = {
   searchForm: document.querySelector('.js-search'),
   addBtn: document.querySelector('.js-add'),
@@ -24,7 +25,12 @@ function onSearchBtn(e) {
     .filter(country => country)
     .map(country => country.replace(/ /g, ''));
 
-  fetchCountries(filteredCountry);
+  fetchCountries(filteredCountry)
+    .then(responce => {
+      const capitals = responce.map(({ capital }) => capital[0]);
+      getWeather(capitals).then(data => console.log(data));
+    })
+    .catch(e => console.log(e));
 }
 
 async function fetchCountries(arrCountry) {
@@ -60,15 +66,10 @@ async function getWeather(arr) {
 
     return responce.json();
   });
-  const prom = await Promise.allSettled(responces);
-  return prom;
-}
+  const data = await Promise.allSettled(responces);
+  const filerdWeather = data
+    .filter(({ status }) => status === 'fulfilled')
+    .map(({ value }) => value);
 
-getWeather(['Ukraine', 'Berlin'])
-  .then(data => {
-    const filerdWeather = data
-      .filter(({ status }) => status === 'fulfilled')
-      .flatMap(cityWeather => cityWeather);
-    console.log(filerdWeather);
-  })
-  .catch(e => console.log(e));
+  return filerdWeather;
+}
