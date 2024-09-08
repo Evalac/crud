@@ -1,3 +1,4 @@
+const BASE_URL = 'https://restcountries.com/v3.1/name';
 const refs = {
   searchForm: document.querySelector('.js-search'),
   addBtn: document.querySelector('.js-add'),
@@ -18,6 +19,56 @@ function onSearchBtn(e) {
   e.preventDefault();
   //   console.dir(e.target);
   const data = new FormData(e.currentTarget);
+  const arrCountry = data.getAll('country');
+  const filteredCountry = arrCountry
+    .filter(country => country)
+    .map(country => country.replace(/ /g, ''));
 
-  console.log(data.getAll('country'));
+  fetchCountries(filteredCountry);
 }
+
+async function fetchCountries(arrCountry) {
+  const responces = arrCountry.map(async country => {
+    const responce = await fetch(`${BASE_URL}/${country}`);
+    if (!responce.ok) {
+      throw new Error('');
+    }
+    return responce.json();
+  });
+  const data = await Promise.allSettled(responces);
+  const countryObj = data
+    .filter(({ status }) => status === 'fulfilled')
+    .flatMap(({ value }) => value);
+
+  return countryObj;
+}
+
+async function getWeather(arr) {
+  const BASE_URL = `http://api.weatherapi.com/v1`;
+  const API_KEY = `de3d646b80f44831adc131731240809`;
+
+  const responces = arr.map(async city => {
+    const params = new URLSearchParams({
+      key: API_KEY,
+      q: city,
+      lang: 'uk',
+    });
+    const responce = await fetch(`${BASE_URL}//current.json?${params}`);
+    if (!responce.ok) {
+      throw new Error(responce.statusText);
+    }
+
+    return responce.json();
+  });
+  const prom = await Promise.allSettled(responces);
+  return prom;
+}
+
+getWeather(['Ukraine', 'Berlin'])
+  .then(data => {
+    const filerdWeather = data
+      .filter(({ status }) => status === 'fulfilled')
+      .flatMap(cityWeather => cityWeather);
+    console.log(filerdWeather);
+  })
+  .catch(e => console.log(e));
