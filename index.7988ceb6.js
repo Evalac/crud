@@ -1,2 +1,0 @@
-!function(){var e={searchForm:document.querySelector(".js-search"),addBtn:document.querySelector(".js-add"),listEl:document.querySelector(".js-list"),formContainer:document.querySelector(".form-container")};e.addBtn.addEventListener("click",(function(t){e.formContainer.insertAdjacentHTML("beforeend",'<input type="text" name="country">')})),e.searchForm.addEventListener("submit",(function(e){e.preventDefault();var t=new FormData(e.currentTarget);console.log(t.getAll("country"))}))}();
-//# sourceMappingURL=index.7988ceb6.js.map
