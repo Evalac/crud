@@ -26,9 +26,10 @@ function onSearchBtn(e) {
     .map(country => country.replace(/ /g, ''));
 
   fetchCountries(filteredCountry)
-    .then(responce => {
-      const capitals = responce.map(({ capital }) => capital[0]);
-      getWeather(capitals).then(data => console.log(data));
+    .then(async responce => {
+      const capitals = responce.map(({ capital }) => capital[0]); // чому стоїть 0 це щоб брати перший елемент масиву
+      const weatherService = await getWeather(capitals);
+      console.log(weatherService);
     })
     .catch(e => console.log(e));
 }
@@ -69,7 +70,7 @@ async function getWeather(arr) {
   const data = await Promise.allSettled(responces);
   const filerdWeather = data
     .filter(({ status }) => status === 'fulfilled')
-    .map(({ value }) => value);
+    .map(({ value }) => value.current);
 
   return filerdWeather;
 }
