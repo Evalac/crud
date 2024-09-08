@@ -31,25 +31,32 @@ async function fetchCountry(params) {
 // написати функцію яка буде повертати 3 столиці з масиву
 
 async function getCapital(params) {
-  try {
-    const arrCapital = ['Kyiv', 'Berlin', 'Paris'];
+  // try {
+  const arrCapital = ['Kyiv', 'Berslin', 'Paris'];
 
-    const responces = arrCapital.map(async capital => {
-      const res = await fetch(`${BASE_URL}/${capital}`);
+  const responces = arrCapital.map(async capital => {
+    const res = await fetch(`${BASE_URL}/${capital}`);
+    // console.log(res);
+    if (!res.ok) {
+      throw new Error('NOT FOUND');
+      // Promise.reject('NOT FOUND');
+    }
 
-      if (!res.ok) {
-        throw new Error('NOT FOUND');
-      }
-
-      return res.json();
-    });
-    const prom = await Promise.allSettled(responces);
-    console.log(prom);
-  } catch (error) {
-    console.log(`ПОМИЛКА`, error);
-  }
+    return res.json();
+  });
+  const prom = await Promise.allSettled(responces);
+  return prom;
+  // console.log(prom);
+  // } catch (error) {
+  //   console.log(`ПОМИЛКА`, error);
+  // }
 }
 
 getCapital()
-  .then()
+  .then(data => {
+    const resp = data
+      .filter(({ status }) => status === 'fulfilled')
+      .flatMap(({ value }) => value);
+    console.log(resp);
+  })
   .catch(e => console.log(e));

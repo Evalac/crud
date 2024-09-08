@@ -4,4 +4,5 @@
 // import './js/d-delete';
 // import './js/async';
 // import './js/async-crud';
-import './js/async-foo-practice';
+// import './js/async-foo-practice';
+import './js/async-search-form';
