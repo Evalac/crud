@@ -30,10 +30,11 @@ function onSearchBtn(e) {
     .then(async responce => {
       const capitals = responce.map(({ capital }) => capital[0]); // чому стоїть 0 це щоб брати перший елемент масиву
       const weatherService = await getWeather(capitals);
-      console.log(weatherService);
+
       onCreateMarkupWeather(weatherService);
     })
-    .catch(e => console.log(e));
+    .catch(err => console.log(err))
+    .finally(e => refs.searchForm.reset());
 }
 
 async function fetchCountries(arrCountry) {
