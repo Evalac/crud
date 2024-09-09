@@ -5,6 +5,7 @@ const refs = {
   addBtn: document.querySelector('.js-add'),
   listEl: document.querySelector('.js-list'),
   formContainer: document.querySelector('.form-container'),
+  weatherContainer: document.querySelector('.js-weather-container'),
 };
 
 refs.addBtn.addEventListener('click', onCountryAdd);
@@ -30,6 +31,7 @@ function onSearchBtn(e) {
       const capitals = responce.map(({ capital }) => capital[0]); // чому стоїть 0 це щоб брати перший елемент масиву
       const weatherService = await getWeather(capitals);
       console.log(weatherService);
+      onCreateMarkupWeather(weatherService);
     })
     .catch(e => console.log(e));
 }
@@ -70,7 +72,33 @@ async function getWeather(arr) {
   const data = await Promise.allSettled(responces);
   const filerdWeather = data
     .filter(({ status }) => status === 'fulfilled')
-    .map(({ value }) => value.current);
+    .map(({ value }) => value);
 
   return filerdWeather;
+}
+
+function onCreateMarkupWeather(arrData) {
+  const markup = arrData
+    .map(
+      ({
+        current: {
+          temp_c,
+          humidity,
+          condition: { text, icon },
+        },
+        location: { name, country },
+      }) => ` <ul class="weather-widget">
+      <li class="weather-item weather-country">${name}</li>
+      <li class="weather-item weather-capital">${country}</li>
+      <ul class="weather-condition">
+        <li><p class="weather-condition-text">${text}</p></li>
+        <li><img class="weather-icon" src="${icon}" alt="ICON" /></li>
+      </ul>
+      <li class="weather-item weather-temp">Current temp: ${temp_c} &deg;C</li>
+      <li class="weather-item weather-humidity">Humidity: ${humidity}</li>
+    </ul>`
+    )
+    .join('');
+
+  return refs.weatherContainer.insertAdjacentHTML('beforeend', markup);
 }
