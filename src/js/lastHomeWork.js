@@ -29,7 +29,7 @@ function onSearch(evt) {
   const inputValue = formData.get('searchQuery');
   const data = getSearchPixabay(inputValue);
 
-  data
+  return data
     .then(data => {
       console.log(data);
       createMarkup([data]);
